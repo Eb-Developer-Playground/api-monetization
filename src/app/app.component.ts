@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'ApiMonetization';
 
   constructor(private titleService: Title) {
-    this.titleService.setTitle($localize`${this.title}`);
+    // this.titleService.setTitle($localize`${this.title}`);
   }
 }
