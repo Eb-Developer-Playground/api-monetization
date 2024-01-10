@@ -5,17 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
-import { NavbarComponent } from './layout/components/navbar/navbar.component';
-import { CatalogSectionComponent } from './layout/components/catalog-section/catalog-section.component';
-import { FooterComponent } from './layout/components/footer/footer.component';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CatalogSectionComponent, FooterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    AuthenticationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
