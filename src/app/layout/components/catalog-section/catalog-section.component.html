@@ -1,0 +1,77 @@
+<mat-grid-list [cols]="isSmallScreen ? 1 : 3" gutterSize="60">
+  <mat-grid-tile [colspan]="isSmallScreen ? 1 : 2">
+    <div class="content-container">
+      <h3>What is API Monetization ?</h3>
+      <P
+        >API monetization is a relatively new business practice, which
+        businesses use to increase their revenue as part of their overall API
+        management plan. By strategically charging fees for certain API
+        endpoints, your API management plan can have a positive impact on your
+        business’s overall revenue. In traditional business models, monetization
+        is done by offering a service directly to consumers or businesses. With
+        API monetization models, businesses sell API access directly to software
+        developer teams. The developers then use the API to access data or
+        perform other actions.</P
+      >
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="gradient-card">
+      <mat-card-header>
+        <mat-card-title>Build anything with APIs, faster. </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        Build anything with APIs, faster. Discover, evaluate, and integrate with
+        any API. RapidAPI is the world’s largest API Hub with over 4 Million
+        developers and 35,000 APIs.
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          color="primary"
+          style="width: 100%; display: block"
+        >
+          Browse APIs
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- list the apis -->
+<section>
+  <h3 style="margin: 0 0 40px">Explore the available APIs</h3>
+  <div class="api-grid">
+    <div *ngFor="let data of dummyData">
+      <div class="icon-item">
+        <div
+          class="icon-item-icon"
+          [ngStyle]="{ 'background-color': data.backgroundColor }"
+        >
+          <span class="material-icons">
+            {{ data.icon }}
+          </span>
+        </div>
+        <div class="icon-item-right">
+          <div class="icon-item-title">{{ data.title }}</div>
+          <div class="icon-item-desc body-small">
+            {{ data.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- strategies section -->
+<div class="strategies">
+  <h3 style="margin: 40px 0 40px 0">Strategies to Monetize the API</h3>
+  <div>
+    <img
+      src="../../../../assets/monetize-25.png"
+      alt="image"
+      style="width: 100%; height: 100%; object-fit: cover"
+      loading="lazy"
+    />
+  </div>
+</div>
