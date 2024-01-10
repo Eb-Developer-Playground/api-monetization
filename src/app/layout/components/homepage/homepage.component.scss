@@ -5,65 +5,68 @@ mat-grid-list {
   .content-container {
     text-align: justify;
   }
+}
 
-  mat-card-actions {
-    padding: 16px;
-  }
+mat-card-actions {
+  padding: 16px;
+}
 
-  mat-card-content {
-    padding-bottom: 20px;
-  }
+mat-card-content {
+  padding-bottom: 20px;
+}
 
-  // api list section
-  section {
-    .api-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      width: 100%;
+// api list section
+section {
 
-      @media (max-width: 700px) {
-        grid-template-columns: 1fr;
-      }
+  .api-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    width: 100%;
 
-      .icon-item {
-        display: flex;
-        align-items: flex-start;
-        border-radius: 6px;
-        min-width: 0;
-
-        .title {
-          font-weight: 700;
-          color: #221F1F;
-          display: inline-block;
-          margin-bottom: 2px;
-          margin-top: 3px;
-          transition: color .15s;
-        }
-
-        .icon {
-          flex: 0 0 auto;
-          font-size: 24px;
-          line-height: 0px;
-          padding: 15px;
-          border-radius: 8px;
-        }
-      }
-
-      .material-icons {
-        color: #FFFFFF;
-      }
-
-      .icon-item-right {
-        flex: 1 1 auto;
-        min-width: 0;
-        padding-left: 16px;
-      }
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
     }
   }
 
-  // strategies
-  .strategies {
-    margin-bottom: 40px;
+  .icon-item {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 6px;
+    min-width: 0;
   }
+
+  .icon-item-title {
+    font-weight: 700;
+    color: #221F1F;
+    display: inline-block;
+    margin-bottom: 2px;
+    margin-top: 3px;
+    transition: color .15s;
+  }
+
+  .icon-item-icon {
+    flex: 0 0 auto;
+    font-size: 24px;
+    line-height: 0px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .material-icons {
+    color: #FFFFFF;
+
+  }
+
+  .icon-item-right {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 16px;
+  }
+}
+
+
+// strategies
+.strategies {
+  margin-bottom: 40px;
 }
