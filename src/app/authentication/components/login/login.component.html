@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="login">
+  <div class="background">
+    <div>
+      <h1>Find and Connect to Thousands of APIs</h1>
+      <p>Enter your credentials to log in.</p>
+    </div>
+    <div class="img">
+      <img
+        mat-card-image
+        width="50%"
+        src="../../../../assets/absurd.design - Chapter 1 - 32.png"
+        alt="login-logo"
+      />
+    </div>
+  </div>
+
+  <div class="login-form">
+    <!-- <div>
+      <h3>Sign In</h3>
+    </div> -->
+    <form action="#" method="post">
+      <mat-form-field appearance="outline">
+        <mat-label>Username form field</mat-label>
+        <input matInput placeholder="Placeholder" />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password form field</mat-label>
+        <input matInput placeholder="Placeholder" />
+        <mat-icon matSuffix>visibility_off</mat-icon>
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="primary" (click)="attemptLogin()">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
