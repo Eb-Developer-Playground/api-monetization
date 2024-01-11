@@ -1,9 +1,19 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <span>API Monetization</span>
-    <div class="spacer">
-      <button mat-flat-button color="primary">Login</button>
-      <button mat-stroked-button>Sign up</button>
-    </div>
+    <ng-container *ngIf="userLoggedOut; else userLoggedIn">
+      <div class="spacer">
+        <button mat-flat-button color="primary" (click)="login()">Login</button>
+        <button mat-stroked-button (click)="signUp()">Sign up</button>
+      </div>
+    </ng-container>
+    <ng-template #userLoggedIn>
+      <div class="spacer">
+        <button mat-button color="primary" (click)="accountPage()">
+          <span class="material-icons"> account_circle </span>
+          Account
+        </button>
+      </div>
+    </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>
