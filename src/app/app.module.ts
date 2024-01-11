@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { LayoutModule } from './layout/layout.module';
+import { PortalModule } from './portal/portal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { LayoutModule } from './layout/layout.module';
     MaterialModule,
     AuthenticationModule,
     LayoutModule,
+    PortalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
