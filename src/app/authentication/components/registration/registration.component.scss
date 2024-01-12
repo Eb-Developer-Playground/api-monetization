@@ -40,6 +40,12 @@
     width: 100%;
   }
 
+  .reg-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .mat-mdc-unelevated-button.mat-mdc-button-base {
     width: 250px;
     height: 53px;
