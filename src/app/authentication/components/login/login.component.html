@@ -18,21 +18,49 @@
     <!-- <div>
       <h3>Sign In</h3>
     </div> -->
-    <form action="#" method="post">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="attemptLogin()"
+      class="responsive"
+    >
       <mat-form-field appearance="outline">
-        <mat-label>Username form field</mat-label>
-        <input matInput placeholder="Placeholder" />
+        <mat-label>Username or email</mat-label>
+        <input
+          matInput
+          placeholder="submit your username"
+          formControlName="username"
+        />
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
+      <div *ngIf="f['username'].invalid && submitted">
+        <mat-error *ngIf="f['username'].errors?.['required']"
+          >Username is required!</mat-error
+        >
+        <mat-error *ngIf="f['username'].errors?.['email']"
+          >Provide a valid email!</mat-error
+        >
+      </div>
       <mat-form-field appearance="outline">
-        <mat-label>Password form field</mat-label>
-        <input matInput placeholder="Placeholder" />
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="******"
+          formControlName="password"
+          type="password"
+        />
         <mat-icon matSuffix>visibility_off</mat-icon>
       </mat-form-field>
+      <div *ngIf="f['password'].invalid && submitted">
+        <mat-error *ngIf="f['password'].errors?.['required']"
+          >Password is required!</mat-error
+        >
+        <!-- <pre>{{ f["password"].errors | json }}</pre> -->
+        <mat-error *ngIf="f['password'].errors?.['minlength']"
+          >Provide at least 6 characters!</mat-error
+        >
+      </div>
       <div>
-        <button mat-flat-button color="primary" (click)="attemptLogin()">
-          Login
-        </button>
+        <button mat-flat-button color="primary">Login</button>
       </div>
     </form>
   </div>

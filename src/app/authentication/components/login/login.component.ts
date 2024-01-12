@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +7,32 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
-  constructor(private router: Router) {}
+export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
+  submitted = false;
+
+  constructor(private router: Router, private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm() {
+    this.loginForm = this._formBuilder.group({
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
 
   attemptLogin() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
     this.router.navigate(['/portal']);
+  }
+
+  get f() {
+    return this.loginForm.controls;
   }
 }
