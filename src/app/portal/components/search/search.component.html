@@ -1,0 +1,16 @@
+<mat-form-field appearance="outline">
+  <mat-select
+    [formControl]="formCtrl"
+    placeholder="Search for APIs"
+    #singleSelect
+  >
+    <mat-option>
+      <ngx-mat-select-search
+        [formControl]="formFilterCtrl"
+      ></ngx-mat-select-search>
+    </mat-option>
+    <mat-option *ngFor="let data of filteredCardData" [value]="data">
+      {{ data.title }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
