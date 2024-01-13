@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PortalComponent } from './components/base/portal.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ApiDocumentationComponent } from './components/api-documentation/api-documentation.component';
+import { ApiDocumentationComponent } from './components/documentation-api/api-documentation.component';
+import { UtilizationApiComponent } from './components/utilization-api/utilization-api.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'documentation/:id',
         component: ApiDocumentationComponent,
+      },
+      {
+        path: 'utilization',
+        component: UtilizationApiComponent,
       },
     ],
   },
