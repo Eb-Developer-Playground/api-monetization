@@ -1,5 +1,6 @@
 <section>
-  <h3>Discover recommended APIs</h3>
+  <app-search></app-search>
+  <h3 class="spacing">Discover recommended APIs</h3>
   <div class="discover-grid">
     <mat-card *ngFor="let data of cardData">
       <mat-card-header>
@@ -14,7 +15,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-listbox aria-label="api selection">
           <mat-chip-option>Verified</mat-chip-option>
         </mat-chip-listbox>
         <div>
@@ -22,6 +23,7 @@
             class="material-icons action-icon"
             role="button"
             title="More options"
+            (click)="apiUtilization()"
             >link</i
           >
           <i

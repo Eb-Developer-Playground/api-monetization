@@ -17,6 +17,10 @@
   }
 }
 
+mat-card {
+  height: 240px;
+}
+
 mat-card-title {
   font-size: medium;
   font-weight: 500;
@@ -28,9 +32,20 @@ mat-card-header {
 }
 
 mat-card-content {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  flex-basis: 89px;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+
+  .p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    overflow: hidden;
+  }
+
 }
 
 
@@ -60,4 +75,8 @@ mat-card-actions {
   outline: none;
   padding: 6px;
   color: #A32A29;
+}
+
+.spacing {
+  margin-top: 0;
 }
