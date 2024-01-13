@@ -1,0 +1,54 @@
+.notice-primary {
+  background-color: gainsboro;
+  border-color: gainsboro;
+}
+
+@media (min-width: 768px) {
+  .notice {
+    align-items: center;
+    display: inline-flex;
+  }
+}
+
+.notice {
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  flex: 0 0 auto;
+  min-width: 275px;
+  padding: 16px 18px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .notice-message {
+    flex: 1 1 auto;
+  }
+}
+
+.notice-message {
+  color: #111111;
+  margin-bottom: -2px;
+  text-align: left;
+}
+
+.notice-body {
+  margin-top: -2px;
+}
+
+.docs-samples-notice {
+  position: relative;
+}
+
+.header {
+  margin: 45px 0 10px;
+}
