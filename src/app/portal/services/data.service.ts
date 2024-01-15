@@ -86,5 +86,14 @@ export class DataService {
       actions: ['link', 'navigate_next'],
     },
   ];
+
+  //api utilization
+  dummyData = [
+    { timestamp: '2022-01-01', requests: 10 },
+    { timestamp: '2022-01-02', requests: 15 },
+    { timestamp: '2022-01-03', requests: 8 },
+    { timestamp: '2022-01-04', requests: 20 },
+    { timestamp: '2022-01-05', requests: 12 },
+  ];
   constructor() {}
 }

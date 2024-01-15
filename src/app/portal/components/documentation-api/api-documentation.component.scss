@@ -3,22 +3,25 @@
   border-color: gainsboro;
 }
 
-@media (min-width: 768px) {
-  .notice {
-    align-items: center;
-    display: inline-flex;
-  }
-}
+
 
 .notice {
   border: 1px solid var(--gray-100);
   border-radius: 8px;
-  flex: 0 0 auto;
+  // flex: 0 0 auto;
   min-width: 275px;
   padding: 16px 18px;
   position: relative;
   text-align: center;
   width: 100%;
+
+  @media (min-width: 768px) {
+    .notice {
+      align-items: center;
+      display: inline-flex;
+    }
+  }
+
 }
 
 .mb-2 {
