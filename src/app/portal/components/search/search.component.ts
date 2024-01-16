@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../services/module-data/data.service';
 import { FormControl } from '@angular/forms';
 import { startWith } from 'rxjs/operators';
 
