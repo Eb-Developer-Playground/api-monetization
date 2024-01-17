@@ -1,0 +1,44 @@
+mat-card {
+  margin-top: 25px;
+
+  .example-header-image {
+    background-image: url('../../../../assets/user-image.jpg');
+    background-size: cover;
+  }
+
+  mat-form-field {
+    width: 32%;
+
+    .mat-mdc-text-field-wrapper {
+      height: 36px;
+      flex: auto;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .disabled-icon {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .genKey {
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+
+  button {
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+
+}

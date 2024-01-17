@@ -17,9 +17,14 @@ export class UtilizationApiComponent implements AfterViewInit {
   }
 
   createChart() {
-    const dummyData = this.chartService.getUtilizationData();
-    const labels = dummyData.map((entry) => entry.timestamp);
-    const data = dummyData.map((entry) => entry.requests);
+    const utilizationData = this.chartService.getUtilizationData();
+
+    const labels = utilizationData.map((entry) => entry.timestamp);
+    const requestDataset = utilizationData.map((entry) => entry.requests);
+    const errorsDataset = utilizationData.map((entry) => entry.errors);
+    const responseTimeDataset = utilizationData.map(
+      (entry) => entry.responseTime
+    );
 
     this.chart = new Chart('MyChart', {
       type: 'line',
@@ -27,9 +32,21 @@ export class UtilizationApiComponent implements AfterViewInit {
         labels: labels,
         datasets: [
           {
-            label: 'API Usage Over Time',
-            data: data,
+            label: 'API Requests',
+            data: requestDataset,
             backgroundColor: '#2F9803',
+            tension: 0.1,
+          },
+          {
+            label: 'Error Rates',
+            data: errorsDataset,
+            backgroundColor: '#FF0000',
+            tension: 0.1,
+          },
+          {
+            label: 'Response Times',
+            data: responseTimeDataset,
+            backgroundColor: '#0000FF',
             tension: 0.1,
           },
         ],

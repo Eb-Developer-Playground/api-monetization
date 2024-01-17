@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Test User</mat-card-title>
+    <mat-card-subtitle>Profile</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card-subtitle>Generate and manage API keys</mat-card-subtitle>
+    <div class="genKey">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          type="text"
+          id="api-key"
+          [(ngModel)]="apiKey"
+          [disabled]="!apiKey"
+          readonly
+        />
+        <mat-icon
+          matSuffix
+          matTooltip="Copy the key"
+          (click)="copyApiKey()"
+          [ngClass]="{ 'disabled-icon': !apiKey }"
+          >content_copy</mat-icon
+        >
+      </mat-form-field>
+      <button mat-flat-button color="accent" (click)="generateApiKey()">
+        Generate API Key
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
