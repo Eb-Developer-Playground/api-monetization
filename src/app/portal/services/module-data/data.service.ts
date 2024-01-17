@@ -110,16 +110,21 @@ export class DataService {
   ];
 
   //api utilization
-  getUtilizationData(): { timestamp: string; requests: number }[] {
+  getUtilizationData(): {
+    timestamp: string;
+    requests: number;
+    errors: number;
+    responseTime: number;
+  }[] {
     return [
-      { timestamp: '2022-05-10', requests: 467 },
-      { timestamp: '2022-05-11', requests: 576 },
-      { timestamp: '2022-05-12', requests: 572 },
-      { timestamp: '2022-05-13', requests: 79 },
-      { timestamp: '2022-05-14', requests: 92 },
-      { timestamp: '2022-05-15', requests: 574 },
-      { timestamp: '2022-05-16', requests: 573 },
-      { timestamp: '2022-05-17', requests: 576 },
+      { timestamp: '2022-05-10', requests: 467, errors: 5, responseTime: 150 },
+      { timestamp: '2022-05-11', requests: 576, errors: 8, responseTime: 180 },
+      { timestamp: '2022-05-12', requests: 572, errors: 2, responseTime: 120 },
+      { timestamp: '2022-05-13', requests: 79, errors: 1, responseTime: 200 },
+      { timestamp: '2022-05-14', requests: 92, errors: 3, responseTime: 170 },
+      { timestamp: '2022-05-15', requests: 574, errors: 6, responseTime: 160 },
+      { timestamp: '2022-05-16', requests: 573, errors: 4, responseTime: 140 },
+      { timestamp: '2022-05-17', requests: 576, errors: 7, responseTime: 190 },
     ];
   }
 }
