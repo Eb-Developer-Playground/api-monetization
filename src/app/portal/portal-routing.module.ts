@@ -4,6 +4,7 @@ import { PortalComponent } from './components/base/portal.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ApiDocumentationComponent } from './components/documentation-api/api-documentation.component';
 import { UtilizationApiComponent } from './components/utilization-api/utilization-api.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'utilization',
         component: UtilizationApiComponent,
+      },
+      {
+        path: 'account',
+        component: UserAccountComponent,
       },
     ],
   },

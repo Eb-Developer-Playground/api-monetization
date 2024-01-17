@@ -9,8 +9,9 @@ import { MaterialModule } from 'src/material.module';
 import { ApiDocumentationComponent } from './components/documentation-api/api-documentation.component';
 import { SearchComponent } from './components/search/search.component';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtilizationApiComponent } from './components/utilization-api/utilization-api.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UtilizationApiComponent } from './components/utilization-api/utilizatio
     ApiDocumentationComponent,
     SearchComponent,
     UtilizationApiComponent,
+    UserAccountComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { UtilizationApiComponent } from './components/utilization-api/utilizatio
     MaterialModule,
     NgxMatSelectSearchModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class PortalModule {}
