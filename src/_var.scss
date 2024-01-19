@@ -1,0 +1,33 @@
+@import './palette.scss';
+
+
+// Declare variables for each color
+$theme-50: map-get($theme-palette, 50);
+$theme-100: map-get($theme-palette, 100);
+$theme-200: map-get($theme-palette, 200);
+$theme-300: map-get($theme-palette, 300);
+$theme-400: map-get($theme-palette, 400);
+$theme-500: map-get($theme-palette, 500);
+$theme-600: map-get($theme-palette, 600);
+$theme-700: map-get($theme-palette, 700);
+$theme-800: map-get($theme-palette, 800);
+$theme-900: map-get($theme-palette, 900);
+$theme-A100: map-get($theme-palette, A100);
+$theme-A200: map-get($theme-palette, A200);
+$theme-A400: map-get($theme-palette, A400);
+$theme-A700: map-get($theme-palette, A700);
+
+$contrast-50: map-get($theme-palette, contrast, 50);
+$contrast-100: map-get($theme-palette, contrast, 100);
+$contrast-200: map-get($theme-palette, contrast, 200);
+$contrast-300: map-get($theme-palette, contrast, 300);
+$contrast-400: map-get($theme-palette, contrast, 400);
+$contrast-500: map-get($theme-palette, contrast, 500);
+$contrast-600: map-get($theme-palette, contrast, 600);
+$contrast-700: map-get($theme-palette, contrast, 700);
+$contrast-800: map-get($theme-palette, contrast, 800);
+$contrast-900: map-get($theme-palette, contrast, 900);
+$contrast-A100: map-get($theme-palette, contrast, A100);
+$contrast-A200: map-get($theme-palette, contrast, A200);
+$contrast-A400: map-get($theme-palette, contrast, A400);
+$contrast-A700: map-get($theme-palette, contrast, A700);
