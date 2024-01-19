@@ -1,0 +1,15 @@
+@import '../../../../var';
+
+.footer {
+  background-color: $theme-300;
+  padding: 40px;
+  color: $contrast-A100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-toolbar-row {
+  padding: 0 10%;
+  justify-content: space-between
+}

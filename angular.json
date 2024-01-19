@@ -31,7 +31,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss", "src/theme.scss", "src/palette.scss"],
+            "styles": [
+              "src/styles.scss",
+              "src/theme.scss",
+              "src/palette.scss",
+              "src/_var.scss"
+            ],
             "scripts": ["node_modules/redoc/bundles/redoc.standalone.js"]
           },
           "configurations": {

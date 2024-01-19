@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiKeys } from '../../interfaces/api-keys';
 
 @Component({
   selector: 'app-user-account',
@@ -7,9 +8,33 @@ import { Component } from '@angular/core';
 })
 export class UserAccountComponent {
   apiKey: string = '';
+  dataSource: ApiKeys[] = this.generateDummyData();
+  displayedColumns: string[] = [
+    'apiName',
+    'apiKey',
+    'generatedDate',
+    'revoked',
+    'actions',
+  ];
 
   generateApiKey() {
     this.apiKey = this.generateRandomKey();
+  }
+
+  generateDummyData(): ApiKeys[] {
+    const dummyData: ApiKeys[] = [];
+    for (let i = 1; i <= 5; i++) {
+      const apiKey: ApiKeys = {
+        apiName: `Api ${i}`,
+        apiKey: `API_KEY_${i}`,
+        generatedDate: new Date(),
+        revoked: false,
+      };
+
+      dummyData.push(apiKey);
+    }
+
+    return dummyData;
   }
 
   copyApiKey() {
@@ -31,5 +56,9 @@ export class UserAccountComponent {
     }
 
     return apiKey;
+  }
+
+  revokeApiKey(apiKey: ApiKeys) {
+    apiKey.revoked = true;
   }
 }

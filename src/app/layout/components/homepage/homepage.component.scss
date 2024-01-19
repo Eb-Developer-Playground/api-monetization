@@ -1,26 +1,31 @@
-mat-grid-list {
-  padding-bottom: 0;
-  display: flex;
+@import '../../../../var';
 
-  .content-container {
-    text-align: justify;
-  }
-}
+// mat-grid-list {
+//   padding-bottom: 0;
+//   display: flex;
+
+//   .content-container {
+//     text-align: justify;
+//   }
+// }
 
 mat-card-actions {
-  padding: 16px;
+  padding: 20px 16px;
 }
 
-mat-card-content {
-  padding-bottom: 20px;
+// mat-card-content {
+//   padding-bottom: 20px;
+// }
+
+mat-card {
+  padding: 16px;
 }
 
 // api list section
 section {
-
   .api-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
     width: 100%;
 
@@ -69,4 +74,70 @@ section {
 // strategies
 .strategies {
   margin-bottom: 40px;
+}
+
+.accord {
+  background-color: $contrast-A100;
+  border-radius: 5px;
+  padding: 30px;
+  margin-top: 90px;
+
+  h3 {
+    color: $contrast-A400;
+  }
+
+  p {
+    color: $contrast-800;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 25px;
+  margin: 25px 0 25px;
+
+  .content-side {
+    flex: 4;
+    text-align: justify;
+  }
+
+  .card-side {
+    flex: 2;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.api-monetization-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  opacity: 0;
+  /* Start with 0 opacity */
+  animation: fadeIn 1s ease-out forwards;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.api-image {
+  max-width: 100%;
+}
+
+.api-paragraph {
+  text-align: justify;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

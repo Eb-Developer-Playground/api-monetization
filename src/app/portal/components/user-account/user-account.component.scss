@@ -1,5 +1,16 @@
+@import '../../../../var';
+
 mat-card {
+  // background-color: $contrast-A100;
   margin-top: 25px;
+
+  // mat-card-title {
+  //   color: $contrast-400;
+  // }
+
+  // mat-card-subtitle {
+  //   color: $contrast-800;
+  // }
 
   .example-header-image {
     background-image: url('../../../../assets/user-image.jpg');
@@ -8,11 +19,7 @@ mat-card {
 
   mat-form-field {
     width: 32%;
-
-    .mat-mdc-text-field-wrapper {
-      height: 36px;
-      flex: auto;
-    }
+    // color: $contrast-400;
 
     @media (max-width: 767px) {
       width: 100%;
@@ -27,6 +34,7 @@ mat-card {
   .genKey {
     display: flex;
     gap: 10px;
+    align-items: baseline;
 
     @media (max-width: 767px) {
       display: block;
@@ -40,5 +48,8 @@ mat-card {
     }
   }
 
+}
 
+table {
+  margin-top: 25px;
 }
