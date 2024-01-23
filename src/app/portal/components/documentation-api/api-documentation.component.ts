@@ -9,7 +9,7 @@ declare const Redoc: any;
   styleUrls: ['./api-documentation.component.scss'],
 })
 export class ApiDocumentationComponent implements AfterViewInit {
-  @Input() id = '';
+  @Input() id: number = 0;
   @Input() swaggerUrl!: string;
 
   constructor(

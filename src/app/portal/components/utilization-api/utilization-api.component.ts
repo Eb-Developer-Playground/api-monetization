@@ -13,7 +13,7 @@ export class UtilizationApiComponent implements AfterViewInit {
   private chartService = inject(DataService);
 
   ngAfterViewInit(): void {
-    this.createChart();
+    // debounceTime(500)(this.createChart.bind(this))();
   }
 
   createChart() {
