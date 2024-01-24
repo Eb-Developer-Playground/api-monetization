@@ -18,24 +18,79 @@
     <!-- <div>
         <h3>Sign Up</h3>
       </div> -->
-    <form action="#" method="post" class="reg-responsive">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+      class="reg-responsive"
+    >
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Placeholder" />
+        <input
+          matInput
+          placeholder="Placeholder"
+          type="text"
+          formControlName="username"
+        />
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          type="email"
+          formControlName="email"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
+        <input
+          matInput
+          placeholder="******"
+          [type]="passwordHidden ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="togglePasswordVisibility('password')"
+        >
+          <mat-icon>{{
+            passwordHidden ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
       </mat-form-field>
+
       <mat-form-field appearance="outline">
         <mat-label>Confirm Password</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>visibility_off</mat-icon>
+        <input
+          matInput
+          placeholder="******"
+          [type]="confirmPasswordHidden ? 'password' : 'text'"
+          formControlName="confirmPassword"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="togglePasswordVisibility('confirmPassword')"
+        >
+          <mat-icon>{{
+            confirmPasswordHidden ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
       </mat-form-field>
+
       <div>
-        <button mat-flat-button color="primary" (click)="register()">
+        <button
+          mat-flat-button
+          color="primary"
+          [disabled]="registerForm.invalid"
+        >
           Register
         </button>
       </div>
