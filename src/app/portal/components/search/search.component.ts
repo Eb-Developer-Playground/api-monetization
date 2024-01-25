@@ -19,7 +19,6 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.cardData = this.dataService.cardData;
     this.formFilterCtrl.valueChanges.pipe(startWith('')).subscribe((value) => {
-      console.log('Search input value:', this.formFilterCtrl.value);
       this.filteredCardData = this.filterCardData(value);
     });
   }

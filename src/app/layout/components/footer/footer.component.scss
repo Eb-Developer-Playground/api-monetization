@@ -1,6 +1,6 @@
-@import '../../../../var';
+@import '../../../../themes/var';
 
-.footer {
+mat-toolbar {
   background-color: $theme-300;
   padding: 40px;
   color: $contrast-A100;

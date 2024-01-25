@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserAccountComponent } from './user-account.component';
+import { MaterialModule } from 'src/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('UserAccountComponent', () => {
   let component: UserAccountComponent;
@@ -8,7 +11,13 @@ describe('UserAccountComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserAccountComponent]
+      declarations: [UserAccountComponent],
+      imports: [
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+      ],
     });
     fixture = TestBed.createComponent(UserAccountComponent);
     component = fixture.componentInstance;

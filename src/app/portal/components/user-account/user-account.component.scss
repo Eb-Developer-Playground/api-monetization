@@ -1,7 +1,7 @@
-@import '../../../../var';
+@import '../../../../themes/var';
 
 mat-card {
-  // background-color: $contrast-A100;
+  background-color: $theme-A400;
   margin-top: 85px;
 
   // mat-card-title {
@@ -49,6 +49,26 @@ mat-card {
   }
 
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.header-user {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
 
 table {
   margin-top: 25px;

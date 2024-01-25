@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { MaterialModule } from 'src/material.module';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,7 +12,14 @@ describe('SearchComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchComponent]
+      declarations: [SearchComponent],
+      imports: [
+        MaterialModule,
+        NgxMatSelectSearchModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NoopAnimationsModule,
+      ],
     });
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;

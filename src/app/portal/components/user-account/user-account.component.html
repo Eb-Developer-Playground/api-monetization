@@ -1,9 +1,20 @@
 <mat-card>
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Test User</mat-card-title>
-    <mat-card-subtitle>Profile</mat-card-subtitle>
-  </mat-card-header>
+  <div class="header">
+    <div class="header-left">
+      <div mat-card-avatar class="example-header-image"></div>
+      <div class="header-user">
+        <mat-card-title>Test User</mat-card-title>
+        <mat-card-subtitle>Profile</mat-card-subtitle>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button mat-flat-button color="primary" (click)="logout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+
   <mat-card-content>
     <mat-card-subtitle>Generate and manage API keys</mat-card-subtitle>
     <div class="genKey">
