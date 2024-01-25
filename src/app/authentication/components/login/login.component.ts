@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
+  passwordHidden = true;
 
   constructor(private router: Router, private _formBuilder: FormBuilder) {}
 
@@ -30,9 +31,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.router.navigate(['/portal']);
+    this.loginForm.reset();
   }
 
   get f() {
     return this.loginForm.controls;
+  }
+
+  togglePasswordVisibility() {
+    this.passwordHidden = !this.passwordHidden;
   }
 }

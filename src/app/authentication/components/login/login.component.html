@@ -46,9 +46,18 @@
           matInput
           placeholder="******"
           formControlName="password"
-          type="password"
+          [type]="passwordHidden ? 'password' : 'text'"
         />
-        <mat-icon matSuffix>visibility_off</mat-icon>
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="togglePasswordVisibility()"
+        >
+          <mat-icon>{{
+            passwordHidden ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
       </mat-form-field>
       <div *ngIf="f['password'].invalid && submitted">
         <mat-error *ngIf="f['password'].errors?.['required']"
