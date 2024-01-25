@@ -19,6 +19,10 @@ export class NavbarComponent {
     this.router.navigate(['/auth/signup']);
   }
 
+  home() {
+    this.router.navigate(['/portal']);
+  }
+
   accountPage() {
     this.router.navigate(['/account']);
   }

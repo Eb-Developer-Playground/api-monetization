@@ -1,6 +1,8 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span>API Monetization</span>
+    <a (click)="home()" style="cursor: pointer">
+      <span>API Monetization</span>
+    </a>
     <ng-container *ngIf="userLoggedOut; else userLoggedIn">
       <div class="spacer">
         <button mat-flat-button color="primary" (click)="login()">Login</button>

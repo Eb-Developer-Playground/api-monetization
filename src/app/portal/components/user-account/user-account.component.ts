@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ApiKeys } from '../../interfaces/api-keys';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-account',
@@ -16,6 +17,8 @@ export class UserAccountComponent {
     'revoked',
     'actions',
   ];
+
+  private router = inject(Router);
 
   generateApiKey() {
     this.apiKey = this.generateRandomKey();
@@ -60,5 +63,9 @@ export class UserAccountComponent {
 
   revokeApiKey(apiKey: ApiKeys) {
     apiKey.revoked = true;
+  }
+
+  logout() {
+    this.router.navigate(['/']);
   }
 }
