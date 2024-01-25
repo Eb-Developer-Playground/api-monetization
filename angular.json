@@ -33,9 +33,9 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "src/theme.scss",
-              "src/palette.scss",
-              "src/_var.scss"
+              "src/themes/theme.scss",
+              "src/themes/palette.scss",
+              "src/themes/_var.scss"
             ],
             "scripts": ["node_modules/redoc/bundles/redoc.standalone.js"]
           },
