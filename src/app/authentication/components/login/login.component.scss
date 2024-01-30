@@ -68,3 +68,23 @@
     }
   }
 }
+
+// logging in pulsating effect
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsating {
+  animation: pulsate 1s infinite;
+}

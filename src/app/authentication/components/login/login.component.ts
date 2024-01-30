@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { SnackbarServiceService } from 'src/app/shared/snackbar/snackbar-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +13,14 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   passwordHidden = true;
+  horizontalPosition = 'end';
+  verticalPosition = 'top';
 
-  constructor(private router: Router, private _formBuilder: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private _formBuilder: FormBuilder,
+    private snackbarService: SnackbarServiceService
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -30,8 +38,15 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.router.navigate(['/portal']);
-    this.loginForm.reset();
+    const config: MatSnackBarConfig = {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    };
+    this.snackbarService.open('Logged in successfully', 'Close', 3000, config);
+    setTimeout(() => {
+      this.router.navigate(['/portal']);
+      this.loginForm.reset();
+    }, 2000);
   }
 
   get f() {
