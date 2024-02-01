@@ -69,7 +69,10 @@
         >
       </div>
       <div>
-        <button mat-flat-button color="primary">Login</button>
+        <button mat-flat-button color="primary" [class.logging-in]="loggingIn">
+          <span *ngIf="!loggingIn">Login</span>
+          <span *ngIf="loggingIn">Logging In...</span>
+        </button>
       </div>
     </form>
   </div>
