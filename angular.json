@@ -23,21 +23,30 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": ["fr"],
+            "localize": [
+              "fr"
+            ],
             "outputPath": "dist/api-monetization",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               "src/styles.scss",
               "src/themes/theme.scss",
               "src/themes/palette.scss",
               "src/themes/_var.scss"
             ],
-            "scripts": ["node_modules/redoc/bundles/redoc.standalone.js"]
+            "scripts": [
+              "node_modules/redoc/bundles/redoc.standalone.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,8 +101,41 @@
         "test": {
           "builder": "@angular-devkit/build-angular:jest",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "api-monetization:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "api-monetization:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ],
+            "outputDir": "storybook-static"
           }
         }
       }
