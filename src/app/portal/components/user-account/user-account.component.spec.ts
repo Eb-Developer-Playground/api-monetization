@@ -27,4 +27,10 @@ describe('UserAccountComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  // understand jest syntax
+  // it('should pass'),
+  //   () => {
+  //     let x = 5;
+  //     expect(x).toBe(5);
+  //   };
 });

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserSignUp } from '../../interfaces/user';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SnackbarServiceService } from 'src/app/shared/snackbar/snackbar-service.service';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -12,8 +15,13 @@ export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   passwordHidden: Boolean = true;
   confirmPasswordHidden: Boolean = true;
+  signedIn: Boolean = false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private snackbar: SnackbarServiceService
+  ) {}
   ngOnInit(): void {
     this.initForm();
   }
@@ -28,9 +36,18 @@ export class RegistrationComponent implements OnInit {
   }
 
   register() {
+    this.signedIn = true;
+    const config: MatSnackBarConfig = {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    };
     if (this.registerForm.valid) {
-      this.router.navigate(['/portal']);
-      this.registerForm.reset();
+      this.snackbar.open('User registered successfully', 'Close', 2000, config);
+      setTimeout(() => {
+        this.router.navigate(['/portal']);
+        this.signedIn = false;
+        this.registerForm.reset();
+      }, 2500);
     }
   }
 

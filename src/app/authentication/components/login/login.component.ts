@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   passwordHidden = true;
   horizontalPosition = 'end';
   verticalPosition = 'top';
+  loggingIn: Boolean = false;
 
   constructor(
     private router: Router,
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
 
   attemptLogin() {
     this.submitted = true;
+    this.loggingIn = true;
     if (this.loginForm.invalid) {
       return;
     }
@@ -42,11 +44,12 @@ export class LoginComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'top',
     };
-    this.snackbarService.open('Logged in successfully', 'Close', 3000, config);
+    this.snackbarService.open('Logged in successfully', 'Close', 2000, config);
     setTimeout(() => {
       this.router.navigate(['/portal']);
+      this.loggingIn = false;
       this.loginForm.reset();
-    }, 2000);
+    }, 2500);
   }
 
   get f() {

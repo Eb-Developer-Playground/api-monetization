@@ -91,7 +91,8 @@
           color="primary"
           [disabled]="registerForm.invalid"
         >
-          Register
+          <span *ngIf="!signedIn">Register</span>
+          <span *ngIf="signedIn">Signing In...</span>
         </button>
       </div>
     </form>
